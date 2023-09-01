@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+
+	<title>SpeechGPT</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+
+
+<div class="container" >
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="column has-text-centered">
+    <h1 class="title is-1 publication-title"> <b>BLSP:</b>  </h1>
+    <h3 class="title is-3 publication-title"> Bootstrapping Speech-Language Pre-training via Behavior Alignment of </h3>
+    <h2 class="title is-3 publication-title"> Continuation Writing  </h3>
+    </div>
+    <br>
+    <div class="is-size-5">
+        <span class="author-block">
+          <h4 style="text-align: center;"><b>Authors: </b>Chen Wang, Minpeng Liao, Zhongqiang Huang, Jinliang Lu, Junhong Wu</h4>
+          <h4 style="text-align: center;"> Yuchen Liu, Chenqing Zong, Jiajun Zhang</h4>
+    </div>
+
+    <br>
+
+    <div class="is-size-5 publication-authors">
+        <span class="author-block">
+            <h4 style="text-align: center;"> Instite of Automation, Chinese Academy of Sciences</h4>
+            <h4 style="text-align: center;"> Machine Intelligence Technology Lab, Alibaba DAMO Academy</h4>
+        </span>
+    </div>
+
+    <br>
+
+    <div class="column has-text-centered">
+        <span class="link-block">
+            <a href="https://github.com/cwang621/blsp" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="fab fa-github"></i>
+            </span>
+            <span>Github</span>
+            </a>
+        </span>
+
+        <span class="link-block">
+            <a href="https://arxiv.org/" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span>Paper</span>
+            </a>
+        </span>
+
+
+    </div>
+</div>
+
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Abstract</h2>
+        </div>
+      </div>
+
+      <p> The emergence of large language models (LLMs) has sparked significant interest in extending their remarkable language capabilities to speech. However, modality alignment between speech and text still remains an open problem. Current solutions can be categorized into two strategies. One is a cascaded approach where outputs (tokens or states) of a separately trained speech recognition system are used as inputs for LLMs, which limits their potential in modeling alignment between speech and text. The other is an end-to-end approach that relies on speech instruction data, which is very difficult to collect in large quantities. In this paper, we address these issues and propose the <b>BLSP</b> approach that <b>B</b>ootstraps <b>L</b>anguage-<b>S</b>peech <b>P</b>re-training via behavior alignment of continuation writing. We achieve this by learning a lightweight modality adapter between a frozen speech encoder and an LLM, ensuring that the LLM exhibits the same generation behavior regardless of the modality of input: a speech segment or its transcript. The training process can be divided into two steps. The first step prompts an LLM to generate texts with speech transcripts as prefixes, obtaining text continuations. In the second step, these continuations are used as supervised signals to train the modality adapter in an end-to-end manner. We demonstrate that this straightforward process can extend the capabilities of LLMs to speech, enabling speech recognition, speech translation, spoken language understanding, and speech conversation, even in zero-shot cross-lingual scenarios.
+
+</div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Video Demo</h2>
+        </div>
+      </div>
+
+    <div class="text-center">
+        <video width="100%" controls="">
+            <source src="images/demo_australia.mp4" type="video/mp4"> 
+        </video>
+    </div>
+</div>
+
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Model Architecture</h2>
+          <!-- <div class="content has-text-justified">
+            <li><b>Cross-modal Instruction-Following</b>
+            <li><b>Speech Dialogue</b>
+          </div> -->
+        </div>
+      </div>
+
+    <div class="text-center">
+        <img id="teaser" width="90%" src="images/architecture.png">     
+    </div>
+
+</div>
+
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">More Demos</h2>
+        </div>
+      </div>
+
+    <div class="text-center">
+        <video width="100%" controls="">
+            <source src="images/demo_river.mp4" type="video/mp4"> 
+        </video>
+    </div>
+</div>
+
