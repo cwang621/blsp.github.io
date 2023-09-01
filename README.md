@@ -1,2 +1,2 @@
-# SpeechGPT
-https://0nutation.github.io/SpeechGPT.github.io/
+# BLSP
+https://cwang621.github.io/blsp.github.io/
